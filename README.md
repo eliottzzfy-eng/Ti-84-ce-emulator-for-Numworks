@@ -32,11 +32,6 @@ This project is licensed under the **GNU General Public License v3.0 (GPL-3.0)**
 - **NumWorks Calculator:** Designed for the **N0120** (STM32H725 with 564 KB SRAM and 8 MB external Flash).
 - **TI-84 Plus CE ROM:** A valid `.rom` dump from your own calculator.
 
-### Build Dependencies (if compiling from source)
-- `arm-none-eabi-gcc` (ARM GNU Toolchain)
-- `make`
-- NumWorks EADK / `nwlink` (for packaging and flashing `.nwa` apps)
-
 ---
 
 ## Installation
@@ -69,42 +64,6 @@ This project is licensed under the **GNU General Public License v3.0 (GPL-3.0)**
 | **`x²`** | `x²` | Square |
 | **`0`–`9`, `.`, `+`, `-`, `×`, `÷`** | `0`–`9`, `.`, `+`, `-`, `×`, `÷` | Standard keypad |
 | **`Home` (House)** | *Exit Emulator* | Returns to NumWorks Epsilon home screen |
-
-*(Tip: Check `src/platform.c` to customize key bindings or modifier combinations for `MODE`, `STAT`, `Y=`, and `GRAPH`.)*
-
----
-
-## Building from Source
-
-```bash
-# 1. Clone the repository
-git clone https://github.com<your-username>/cemu-numworks.git
-cd cemu-numworks
-
-# 2. Build the .nwa external application
-make
-
-# 3. Install to a connected NumWorks with your ROM attached
-npx nwlink install-nwa build/cemu-numworks.nwa --external-data /path/to/ti84ce.rom
-```
-
----
-
-## Project Structure
-
-```text
-cemu-numworks/
-├── core/                 # Stripped CEmu eZ80, LCD, keypad, timer & memory core
-│   ├── os/os-numworks.c  # NumWorks OS abstraction layer
-│   └── usb/usb_stub.c    # Stubbed USB peripheral handlers
-├── src/
-│   ├── main.c            # EADK entry point & main emulation loop
-│   ├── platform.c        # NumWorks display, keypad & system integration
-│   ├── memprobe.c        # Memory layout & SRAM/Flash probing helpers
-│   └── icon.png          # NumWorks launcher icon
-├── .github/workflows/    # Automated CI build workflow (build.yml)
-└── Makefile              # ARM Cortex-M7 build & .nwa packaging rules
-```
 
 ---
 
