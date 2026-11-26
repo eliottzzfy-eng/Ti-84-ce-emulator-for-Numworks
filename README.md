@@ -46,6 +46,7 @@ This project is licensed under the **GNU General Public License v3.0 (GPL-3.0)**
    - Open the [NumWorks External App Uploader](https://numworks.com) in a WebUSB-compatible browser (such as Chrome or Edge) or use `nwlink`.
    - Select `cemu-numworks.nwa` as the application file and attach your TI-84 Plus CE `.rom` file as the **external data** file.
    - Flash the app and launch **TI-84 CE** from your NumWorks home screen.
+   - # make sure you did the [nwagra](https://nwagyu.org/fr/guide/help/enlarge-your-memory.html) tutorial before installing or you're not gonna have enough storage
 
 ---
 
